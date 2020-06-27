@@ -1,0 +1,14 @@
+apiVersion: v1
+name: cert-manager-issuer
+version: 0.1.0
+description: This is a cert manager issuer or a cluster issuer deployment
+keywords:
+- cert-manager-issuer
+- cert-manager-cluster-issuer
+- issuer
+- cluster issuer
+- cert-manager
+maintainers:
+- name: "Ibraheem Al Saady"
+  email: ibraheem.al-saady@outlook.com
+engine: gotpl

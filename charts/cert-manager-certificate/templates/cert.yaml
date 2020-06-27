@@ -1,0 +1,33 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: Certificate
+metadata:
+  name: {{ .Release.Name }}
+  namespace: {{ .Release.Namespace }}
+spec:
+  secretName: {{ .Values.secretName }}
+
+  {{- if .Values.isCA }}
+  isCA: {{ .Values.isCA }}
+  {{- end }}
+
+  {{- if .Values.commonName }}
+  commonName: {{ .Values.commonName | quote }}
+  {{- end }}
+
+  {{- if .Values.dnsNames }}
+  dnsNames:
+    {{- range .Values.dnsNames }}
+    - {{ . | quote }}
+    {{- end }}
+  {{- end }}
+
+  {{- if .Values.ipAddresses }}
+  ipAddresses:
+    {{- range .Values.ipAddresses }}
+    - {{ . | quote }}
+    {{- end }}
+  {{- end }}
+
+  issuerRef:
+    kind: {{ .Values.issuerKind }}
+    name: {{ .Values.issuerRefName }}

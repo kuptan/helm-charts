@@ -1,0 +1,30 @@
+## The kind of the deployment
+## Can either be ClusterIssuer | Issuer
+kind: ClusterIssuer
+
+## The type of issue
+## selfSigned | acme 
+issuerType: selfSigned # | ca | acme
+
+## selfSigned config < If issuerType is selfSigned >
+selfSigned: {}
+
+## ca config < If issuerType is ca >
+# ca:
+#   secretName: 
+
+## acme config < if issuerType is acme >
+# acme:
+#   dnsType: azuredns # | route53
+#   serverUrl: ''
+#   email: ''
+#   privateKeySecretName: ''
+#   azure:
+#     clientId: ''
+#     tenantId: ''
+#     subscriptionId: ''
+#     resourceGroupName: ''
+#     clientSecretSecretRef:
+#       name: ''
+#       key: ''
+#     hostedZoneName: ''

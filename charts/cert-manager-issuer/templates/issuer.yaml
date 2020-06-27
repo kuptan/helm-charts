@@ -1,0 +1,39 @@
+apiVersion: cert-manager.io/v1alpha2
+kind: {{ .Values.kind }}
+metadata:
+  name: {{ .Release.Name }}
+
+  {{- if eq .Values.kind "Issuer" }}
+  namespace: {{ .Release.Namespace }}
+  {{- end }}
+spec:
+  {{- if eq .Values.issuerType "selfSigned" }}
+  selfSigned: {{ toYaml .Values.selfSigned }}
+  {{- end }}
+
+  {{- if eq .Values.issuerType "ca" }}
+  ca:
+    secretName: {{ .Values.ca.secretName }}
+  {{- end }}
+
+  {{- if eq .Values.issuerType "acme" }}  
+  acme:
+    server: {{ .Values.acme.serverUrl }}
+    email: {{ .Values.acme.email }}
+    privateKeySecretRef:
+      name: {{ .Values.acme.privateKeySecretName }}
+    solvers:
+    - dns01:
+      {{- if eq .Values.acme.dnsType "azuredns" }}
+        azuredns:
+          clientID: {{ .Values.acme.azure.clientId }}
+          clientSecretSecretRef: 
+            name: {{ .Values.acme.azure.clientSecretSecretRef.name }}
+            key: {{ .Values.acme.azure.clientSecretSecretRef.key }}
+          subscriptionID: {{ .Values.acme.azure.subscriptionId }}
+          tenantID: {{ .Values.acme.azure.tenantId }}
+          resourceGroupName: {{ .Values.acme.azure.resourceGroupName }}
+          hostedZoneName: {{ .Values.acme.azure.hostedZoneName }}
+      {{- end }}  
+  {{- end }}
+  
