@@ -1,0 +1,15 @@
+selector: ingressgateway
+
+hosts:
+  - "*.domain.com"
+
+tls:
+  ## You can use "credentials" to provide the secret name with credentialNameProperty
+  certType: "default" 
+
+  ## possible values: [PASSTHROUGH SIMPLE MUTUAL AUTO_PASSTHROUGH ISTIO_MUTUAL]
+  mode: "SIMPLE"
+
+  privateKey: "/etc/istio/ingressgateway-certs/tls.key"
+  serverCertificate: /etc/istio/ingressgateway-certs/tls.crt
+
