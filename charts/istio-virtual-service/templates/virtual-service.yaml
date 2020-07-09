@@ -43,7 +43,7 @@ spec:
         {{- if .destinationHost | hasSuffix ".com"}}
         host: {{ .destinationHost }}
         {{- else }}
-        host: {{ .destinationHost }}.{{ $.Release.Namespace }}.svc.cluster.local
+        host: {{ .destinationHost }}.{{ .Release.Namespace }}.svc.cluster.local
         {{- end }}
         port:
           number: {{ .destinationPort }}

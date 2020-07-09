@@ -2,4 +2,4 @@ dependencies:
   - name: istio-virtual-service
     version: "0.1.*"
     repository: https://kube-champ.github.io/helm-charts/
-    # condition: istio-virtual-service.enabled
+    condition: istioVirtualService.enabled

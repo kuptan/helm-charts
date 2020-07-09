@@ -22,9 +22,10 @@ ingress:
 
   hosts: []
 
+istioVirtualService:
+  enabled: true
+
 ## Values of the Istio Virtual Service chart
 ## ref: https://github.com/kube-champ/helm-charts/blob/master/charts/istio-virtual-service/values.yaml
 istio-virtual-service:
-  enabled: false
-
   host: something.domain.gq
