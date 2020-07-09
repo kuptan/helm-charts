@@ -1,0 +1,30 @@
+app:
+  replicas: 2
+
+  image:
+    repository: paulbouwer/hello-kubernetes
+    tag: "1.8"
+
+  env:
+    - name: MESSAGE
+      value: "I just deployed this on Kubernetes"
+    # - name: "MESSAGE"
+    #   valueFrom:
+    #     secretKeyRef:
+    #       key:  kubeMessage
+    #       name: kube-message-secret
+
+  servicePort: 80
+  serviceTargetPort: 8080
+
+ingress:
+  enabled: false
+
+  hosts: []
+
+## Values of the Istio Virtual Service chart
+## ref: https://github.com/kube-champ/helm-charts/blob/master/charts/istio-virtual-service/values.yaml
+istio-virtual-service:
+  enabled: false
+
+  host: something.domain.gq

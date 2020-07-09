@@ -1,0 +1,6 @@
+dependencies:
+- name: istio-virtual-service
+  repository: https://kube-champ.github.io/helm-charts/
+  version: 0.1.0
+digest: sha256:b7e4c351506a11d0a4e2b9fd2ea8166863c22317d7e3ad5af903e593fe971e92
+generated: "2020-07-09T21:29:01.019649+02:00"
