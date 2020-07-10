@@ -2,9 +2,9 @@ apiVersion: v1
 entries:
   cert-manager-certificate:
   - apiVersion: v1
-    created: "2020-07-10T13:19:41.968102+02:00"
+    created: "2020-07-11T12:21:49.965635+02:00"
     description: This is a cert manager certificate object
-    digest: 6008b7983915979dba1a188b4831c15da93101fa9a395732f899b146ef1c2225
+    digest: 9007c17b600316712ca670898b61d69607fee7fad69c94afb07ac572128c5713
     keywords:
     - cert-manager-certificate
     - certificate
@@ -18,9 +18,9 @@ entries:
     version: 0.1.0
   cert-manager-issuer:
   - apiVersion: v1
-    created: "2020-07-10T13:19:41.968387+02:00"
+    created: "2020-07-11T12:21:49.965932+02:00"
     description: This is a cert manager issuer or a cluster issuer deployment
-    digest: 623b9f069d14655e64abcbe93d4d0ec2dda947a4be2eddd840ec4e2bfbfacbef
+    digest: 0c2661a0f52f4be32e34b1fc623b924107e46cacf1e4a5394cff8a8b848ac733
     keywords:
     - cert-manager-issuer
     - cert-manager-cluster-issuer
@@ -36,9 +36,9 @@ entries:
     version: 0.1.0
   istio-gateway:
   - apiVersion: v1
-    created: "2020-07-10T13:19:41.968665+02:00"
+    created: "2020-07-11T12:21:49.966243+02:00"
     description: A Helm chart for creating an Istio Gateway object
-    digest: 7516c9296154c26b3a7a016941fd5b64ee4b64f494fadc3e70334aa4ae82444c
+    digest: 4f81bfaa5f5df565efffca0b5215e04b159199dacd35984dea33a8a0dde2b4f0
     keywords:
     - istio-gateway
     - gateway
@@ -52,7 +52,22 @@ entries:
     version: 0.1.0
   istio-virtual-service:
   - apiVersion: v1
-    created: "2020-07-10T13:19:41.968966+02:00"
+    created: "2020-07-11T12:21:49.968286+02:00"
+    description: A Helm chart for creating an Istio VirtualService
+    digest: 05d6d5c4264c8fd3540a34b7631704e8cbd41f6416a520ad21f4a88f942baa07
+    keywords:
+    - istio-virtualservice
+    - virtualservice
+    - istio
+    maintainers:
+    - email: ibraheem.al-saady@outlook.com
+      name: Ibraheem Al Saady
+    name: istio-virtual-service
+    urls:
+    - https://kube-champ.github.io/helm-charts/packaged/istio-virtual-service-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    created: "2020-07-11T12:21:49.967995+02:00"
     description: A Helm chart for creating an Istio VirtualService
     digest: 1ef4c58f9b2b8de6d3cf6385455928bc6a62fede0c9f3e37256e7f56e126a0b9
     keywords:
@@ -68,9 +83,34 @@ entries:
     version: 0.1.0
   stateless-app:
   - apiVersion: v1
-    created: "2020-07-10T13:19:41.970807+02:00"
+    created: "2020-07-11T12:21:49.969922+02:00"
+    dependencies:
+    - condition: istioVirtualService.enabled
+      name: istio-virtual-service
+      repository: https://kube-champ.github.io/helm-charts/
+      version: 0.1.*
     description: A helm chart for deploying an application
-    digest: f7dc1e120dc12bf5fe1e0fe71733c42a8aebfaab95633e224cad220d5f26f9b5
+    digest: 9638727bda0a315202c743bc604dcfa998e4dbe4ca71e4de20b0688e5052ee2a
+    keywords:
+    - stateless-app
+    - app-deployment
+    - kubernetes-application
+    maintainers:
+    - email: ibraheem.al-saady@outlook.com
+      name: Ibraheem Al Saady
+    name: stateless-app
+    urls:
+    - https://kube-champ.github.io/helm-charts/packaged/stateless-app-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v1
+    created: "2020-07-11T12:21:49.969349+02:00"
+    dependencies:
+    - condition: istioVirtualService.enabled
+      name: istio-virtual-service
+      repository: https://kube-champ.github.io/helm-charts/
+      version: 0.1.*
+    description: A helm chart for deploying an application
+    digest: c8d41e81db5cfa48bbde00c183a4d5b18585b8bf7bfd69c28c1f0c510b923e59
     keywords:
     - stateless-app
     - app-deployment
@@ -82,4 +122,4 @@ entries:
     urls:
     - https://kube-champ.github.io/helm-charts/packaged/stateless-app-0.1.0.tgz
     version: 0.1.0
-generated: "2020-07-10T13:19:41.966367+02:00"
+generated: "2020-07-11T12:21:49.965129+02:00"
