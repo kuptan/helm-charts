@@ -17,7 +17,8 @@ selfSigned: {}
 # acme:
 #   dnsType: azuredns # | route53
 #   serverUrl: ''
-#   email: ''
+#   preferredChain: '' ## See preferred chains here: https://cert-manager.io/docs/configuration/acme/#use-an-alternative-certificate-chain
+#   email: '' 
 #   privateKeySecretName: ''
 #   azure:
 #     clientId: ''

@@ -19,6 +19,11 @@ spec:
   {{- if eq .Values.issuerType "acme" }}  
   acme:
     server: {{ .Values.acme.serverUrl }}
+
+    {{- if .Values.acme.preferredChain }}
+    preferredChain: {{ .Values.acme.preferredChain }}
+    {{- end }}
+    
     email: {{ .Values.acme.email }}
     privateKeySecretRef:
       name: {{ .Values.acme.privateKeySecretName }}
