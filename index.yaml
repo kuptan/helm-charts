@@ -1,24 +1,10 @@
 apiVersion: v1
 entries:
-  base:
-  - apiVersion: v1
-    created: "2021-01-21T11:24:45.575701+01:00"
-    description: Helm chart for deploying Istio cluster resources and CRDs
-    digest: 8b128750e9a1f38024f0d949183bd125d257c733a0c1b47af885c2914aa8ee21
-    icon: https://istio.io/latest/favicons/android-192x192.png
-    keywords:
-    - istio
-    name: base
-    sources:
-    - http://github.com/istio/istio
-    urls:
-    - https://kube-champ.github.io/helm-charts/packaged/base-1.1.0.tgz
-    version: 1.1.0
   cert-manager-certificate:
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.576022+01:00"
+    created: "2021-01-21T11:49:13.773434+01:00"
     description: This is a cert manager certificate object
-    digest: d5e3cefa4777f6874e942f6e1b933a80f80777e7751be8b40f63cac55188a432
+    digest: de9ed2cbc8d5a00b332553af524495ba2fd9c72d91016491e98356b300147135
     keywords:
     - cert-manager-certificate
     - certificate
@@ -32,9 +18,9 @@ entries:
     version: 0.1.0
   cert-manager-issuer:
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.576639+01:00"
+    created: "2021-01-21T11:49:13.775343+01:00"
     description: This is a cert manager issuer or a cluster issuer deployment
-    digest: 125e361338a21cb5b5fecfff3014b3436b1da6e1c695d0ae5f8ad92933364355
+    digest: 5169d3ddf06ec1a18a52a6d11896db6bfc827f6624d3a24b59de7881d43d9d8a
     keywords:
     - cert-manager-issuer
     - cert-manager-cluster-issuer
@@ -49,7 +35,7 @@ entries:
     - https://kube-champ.github.io/helm-charts/packaged/cert-manager-issuer-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.576336+01:00"
+    created: "2021-01-21T11:49:13.774373+01:00"
     description: This is a cert manager issuer or a cluster issuer deployment
     digest: 683b6e5fd13b9693c8dfdbd4d68e615d8be5bef22643196117da1db4dbc524a6
     keywords:
@@ -65,11 +51,25 @@ entries:
     urls:
     - https://kube-champ.github.io/helm-charts/packaged/cert-manager-issuer-0.1.0.tgz
     version: 0.1.0
+  istio-base:
+  - apiVersion: v1
+    created: "2021-01-21T11:49:13.777282+01:00"
+    description: Helm chart for deploying Istio cluster resources and CRDs
+    digest: 3bfebedfb91c32bfaa90826b2c99a6a39b6e6ff85e131f16b920bc77fae1a9b9
+    icon: https://istio.io/latest/favicons/android-192x192.png
+    keywords:
+    - istio
+    name: istio-base
+    sources:
+    - http://github.com/istio/istio
+    urls:
+    - https://kube-champ.github.io/helm-charts/packaged/istio-base-1.1.0.tgz
+    version: 1.1.0
   istio-cni:
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.577214+01:00"
+    created: "2021-01-21T11:49:13.777866+01:00"
     description: Helm chart for istio-cni components
-    digest: e8697221ec36fd6187a38b1c8a06b4d27c52cc3663d6da4c3587e75f15bb151f
+    digest: 90ebf774d303ac0f81cba59e804bb4e258d5daa4edf26aa3625d82e51311fb54
     icon: https://istio.io/latest/favicons/android-192x192.png
     keywords:
     - istio-cni
@@ -83,9 +83,9 @@ entries:
   istio-discovery:
   - apiVersion: v1
     appVersion: 1.2.0
-    created: "2021-01-21T11:24:45.580375+01:00"
+    created: "2021-01-21T11:49:13.780334+01:00"
     description: Helm chart for istio control plane
-    digest: 2a77f49f4a2823f75bfd2c3722eb3ea4544eca19927a3d1999e9f4ee94db02fe
+    digest: 08c1b8e31bcb76634bd7cbb4c1947be4ccfa6d372a7a5714a70ec2f8ffe214bb
     icon: https://istio.io/latest/favicons/android-192x192.png
     keywords:
     - istio
@@ -99,9 +99,9 @@ entries:
     version: 1.2.0
   istio-egress:
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.582124+01:00"
+    created: "2021-01-21T11:49:13.781786+01:00"
     description: Helm chart for deploying Istio gateways
-    digest: ae825e8f5722568ba1af0690372ea8ee4ecd48c9c44f54d0db9851a75aa5e81f
+    digest: d1603b70cbc2f7b903a9f7ab9659ad9fe0e14f4ea90fbce864a47ea0544712c7
     icon: https://istio.io/latest/favicons/android-192x192.png
     keywords:
     - istio
@@ -115,9 +115,9 @@ entries:
     version: 1.1.0
   istio-gateway:
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.582496+01:00"
+    created: "2021-01-21T11:49:13.782136+01:00"
     description: A Helm chart for creating an Istio Gateway object
-    digest: 36608d9cb624c5789c705397a1decc65aeeaa4dd63bf4361bf42133038e0a5a6
+    digest: 9b40ee15ccfd77a44eb373035684c88e2b93248f347b71a0d5a619d357c3fa40
     keywords:
     - istio-gateway
     - gateway
@@ -131,9 +131,9 @@ entries:
     version: 0.1.0
   istio-ingress:
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.583799+01:00"
+    created: "2021-01-21T11:49:13.78364+01:00"
     description: Helm chart for deploying Istio gateways
-    digest: 554d5c59aaf27a575b9e2d366cdc7baefa5f0e7c31270c7baaa8e431ade17bc6
+    digest: cd72621fcb4ba35a19698d5134d6d2c2739584e47d47c9f1fbde3d458bded9f6
     icon: https://istio.io/latest/favicons/android-192x192.png
     keywords:
     - istio
@@ -147,9 +147,9 @@ entries:
     version: 1.1.0
   istio-virtual-service:
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.584673+01:00"
+    created: "2021-01-21T11:49:13.784903+01:00"
     description: A Helm chart for creating an Istio VirtualService
-    digest: 7ba1d647edaabdff440a345a0bd78cb8813d99517fd79586878e79c222d0552c
+    digest: 7a4a7ba138894a84faaa487367254c262c572633cbf605de164bee7289af54c5
     keywords:
     - istio-virtualservice
     - virtualservice
@@ -162,7 +162,7 @@ entries:
     - https://kube-champ.github.io/helm-charts/packaged/istio-virtual-service-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.584154+01:00"
+    created: "2021-01-21T11:49:13.784056+01:00"
     description: A Helm chart for creating an Istio VirtualService
     digest: 1ef4c58f9b2b8de6d3cf6385455928bc6a62fede0c9f3e37256e7f56e126a0b9
     keywords:
@@ -179,10 +179,10 @@ entries:
   istiocoredns:
   - apiVersion: v1
     appVersion: "0.1"
-    created: "2021-01-21T11:24:45.585319+01:00"
+    created: "2021-01-21T11:49:13.78631+01:00"
     description: Istio CoreDNS provides DNS resolution for services in multicluster
       setups.
-    digest: 8a92cad031cf161571e56a7cdc19b67b3d636c804df51f98f1c20be54abc670e
+    digest: caac12e1249f754bf92805ccb96943f959357a2b11593149284ab54d4380c1e9
     icon: https://istio.io/latest/favicons/android-192x192.png
     keywords:
     - istio-addon
@@ -195,7 +195,7 @@ entries:
     version: 1.1.0
   stateless-app:
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.588012+01:00"
+    created: "2021-01-21T11:49:13.788807+01:00"
     dependencies:
     - condition: istioVirtualService.enabled
       name: istio-virtual-service
@@ -215,7 +215,7 @@ entries:
     - https://kube-champ.github.io/helm-charts/packaged/stateless-app-0.2.0.tgz
     version: 0.2.0
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.587339+01:00"
+    created: "2021-01-21T11:49:13.787934+01:00"
     dependencies:
     - condition: istioVirtualService.enabled
       name: istio-virtual-service
@@ -235,7 +235,7 @@ entries:
     - https://kube-champ.github.io/helm-charts/packaged/stateless-app-0.1.1.tgz
     version: 0.1.1
   - apiVersion: v1
-    created: "2021-01-21T11:24:45.586084+01:00"
+    created: "2021-01-21T11:49:13.787277+01:00"
     dependencies:
     - condition: istioVirtualService.enabled
       name: istio-virtual-service
@@ -254,4 +254,4 @@ entries:
     urls:
     - https://kube-champ.github.io/helm-charts/packaged/stateless-app-0.1.0.tgz
     version: 0.1.0
-generated: "2021-01-21T11:24:45.573605+01:00"
+generated: "2021-01-21T11:49:13.772815+01:00"
