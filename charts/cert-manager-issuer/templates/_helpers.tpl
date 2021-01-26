@@ -6,6 +6,6 @@
     {{- toYaml . | nindent 4  }}
   {{- end }}
   {{- else }}
-  selfSigned: {{- toYaml .Values.selfSigned }}
+  selfSigned: {}
   {{- end }}
 {{- end }}
