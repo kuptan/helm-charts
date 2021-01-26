@@ -4,28 +4,51 @@ kind: ClusterIssuer
 
 ## The type of issue
 ## selfSigned | acme 
-issuerType: selfSigned # | ca | acme
+issuerType: selfSigned # | ca | vault | venafi | acme
 
 ## selfSigned config < If issuerType is selfSigned >
 selfSigned: {}
+  # crlDistributionPoints:
+  #   - "http://example.com"
 
 ## ca config < If issuerType is ca >
-# ca:
-#   secretName: 
+ca: {}
+  # secretName: ''
+  # crlDistributionPoints:
+  #   - "http://example.com"
 
-## acme config < if issuerType is acme >
-# acme:
-#   dnsType: azuredns # | route53
-#   serverUrl: ''
-#   preferredChain: '' ## See preferred chains here: https://cert-manager.io/docs/configuration/acme/#use-an-alternative-certificate-chain
-#   email: '' 
-#   privateKeySecretName: ''
-#   azure:
-#     clientId: ''
-#     tenantId: ''
-#     subscriptionId: ''
-#     resourceGroupName: ''
-#     clientSecretSecretRef:
-#       name: ''
-#       key: ''
-#     hostedZoneName: ''
+## vault config < If issuerType is vault >
+vault: {}
+  # path: pki_int/sign/example-dot-com
+  # server: https://vault.local
+  # caBundle: <base64 encoded CA Bundle PEM file>
+
+## vault config < If issuerType is venafi >
+venafi: {}
+  # zone: "801bdbd0-8587-11ea-b487-4d978b4efe3d" # Set this to the GUID of the Venafi policy zone you want to use
+  # cloud:
+  #   apiTokenSecretRef:
+  #     name: cloud-secret
+  #     key: apikey
+
+## acme config < if issuerType is acme
+acme: {}
+  # server: ''
+  # preferredChain: '' ## See preferred chains here: https://cert-manager.io/docs/configuration/acme/#use-an-alternative-certificate-chain
+  # email: '' 
+  # privateKeySecretRef:
+  #   name: ''
+  # solvers:
+  #   - http01:
+  #       ingress:
+  #         class: nginx
+  #   - dns01:
+  #       azuredns:
+  #         clientID: ''
+  #         clientSecretSecretRef: 
+  #           name: ''
+  #           key: ''
+  #         subscriptionID: ''
+  #         tenantID: ''
+  #         resourceGroupName: ''
+  #         hostedZoneName: ''

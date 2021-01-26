@@ -1,4 +1,4 @@
-apiVersion: cert-manager.io/v1alpha2
+apiVersion: cert-manager.io/v1
 kind: {{ .Values.kind }}
 metadata:
   name: {{ .Release.Name }}
@@ -8,37 +8,37 @@ metadata:
   {{- end }}
 spec:
   {{- if eq .Values.issuerType "selfSigned" }}
-  selfSigned: {{ toYaml .Values.selfSigned }}
+  selfSigned:
+    {{- with .Values.selfSigneds }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
   {{- end }}
 
   {{- if eq .Values.issuerType "ca" }}
   ca:
-    secretName: {{ .Values.ca.secretName }}
+    {{- with .Values.ca }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- end }}
+
+  {{- if eq .Values.issuerType "vault" }}
+  vault:
+    {{- with .Values.vault }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
+  {{- end }}
+
+  {{- if eq .Values.issuerType "venafi" }}
+  venafi:
+    {{- with .Values.venafi }}
+      {{- toYaml . | nindent 4 }}
+    {{- end }}
   {{- end }}
 
   {{- if eq .Values.issuerType "acme" }}  
   acme:
-    server: {{ .Values.acme.serverUrl }}
-
-    {{- if .Values.acme.preferredChain }}
-    preferredChain: {{ .Values.acme.preferredChain }}
+    {{- with .Values.acme }}
+      {{- toYaml . | nindent 4 }}
     {{- end }}
-    
-    email: {{ .Values.acme.email }}
-    privateKeySecretRef:
-      name: {{ .Values.acme.privateKeySecretName }}
-    solvers:
-    - dns01:
-      {{- if eq .Values.acme.dnsType "azuredns" }}
-        azuredns:
-          clientID: {{ .Values.acme.azure.clientId }}
-          clientSecretSecretRef: 
-            name: {{ .Values.acme.azure.clientSecretSecretRef.name }}
-            key: {{ .Values.acme.azure.clientSecretSecretRef.key }}
-          subscriptionID: {{ .Values.acme.azure.subscriptionId }}
-          tenantID: {{ .Values.acme.azure.tenantId }}
-          resourceGroupName: {{ .Values.acme.azure.resourceGroupName }}
-          hostedZoneName: {{ .Values.acme.azure.hostedZoneName }}
-      {{- end }}  
   {{- end }}
   
