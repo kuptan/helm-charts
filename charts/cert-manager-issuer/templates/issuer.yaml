@@ -8,10 +8,7 @@ metadata:
   {{- end }}
 spec:
   {{- if eq .Values.issuerType "selfSigned" }}
-  selfSigned:
-    {{- with .Values.selfSigneds }}
-      {{- toYaml . | nindent 4 }}
-    {{- end }}
+  {{- template "issuer.selfSigned" . }}
   {{- end }}
 
   {{- if eq .Values.issuerType "ca" }}
