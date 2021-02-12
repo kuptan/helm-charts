@@ -1,0 +1,16 @@
+fullnameOverride:
+nameOverride:
+## The namespace where Grafana is deployed
+## This will also create the dashboards configmaps in that namespace
+grafanaNamespace: "monitoring"
+
+## The Grafana label on the configmaps
+## Grafana looks for configmaps with this label
+grafanaDashboardLabel: grafana_dashboard
+
+dashboards:
+  ## For multi-cluster dashboards, this will overried the $cluster template variable
+  clusterName: 
+
+  ## This value will override the $namespace template variable
+  tenantNamespace:

@@ -1,0 +1,10 @@
+apiVersion: ""
+name: grafana-tenant-dashboards
+version: 0.0.1
+description: Helm chart for a create grafana dashboards in a multi tenancy setup 
+keywords:
+  - grafana
+  - dashboards
+maintainers:
+- name: "Ibraheem Al Saady"
+  email: ibraheem.al-saady@outlook.com
