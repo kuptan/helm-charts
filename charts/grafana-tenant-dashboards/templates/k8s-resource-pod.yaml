@@ -7,7 +7,6 @@ metadata:
     {{- if $.Values.grafanaDashboardLabel }}
     {{ $.Values.grafanaDashboardLabel }}: {{ .Values.dashboards.orgId }}
     {{- end }}
-{{ include "grafana-tenant.labels" $ | indent 4 }}
 data:
   k8s-resources-pod.json: |-
     {
