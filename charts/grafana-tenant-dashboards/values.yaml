@@ -9,6 +9,8 @@ grafanaNamespace: "monitoring"
 grafanaDashboardLabel: grafana_dashboard
 
 dashboards:
+  ## Grafana org id for this dashboard
+  orgId: 
   ## For multi-cluster dashboards, this will overried the $cluster template variable
   clusterName: 
 

@@ -5,7 +5,7 @@ metadata:
   name: {{ printf "%s-%s" (include "grafana-tenant.fullname" $) "k8s-resources-pod" | trunc 63 | trimSuffix "-" }}
   labels:
     {{- if $.Values.grafanaDashboardLabel }}
-    {{ $.Values.grafanaDashboardLabel }}: "1"
+    {{ $.Values.grafanaDashboardLabel }}: {{ .Values.dashboards.orgId }}
     {{- end }}
 {{ include "grafana-tenant.labels" $ | indent 4 }}
 data:
