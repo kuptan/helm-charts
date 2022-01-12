@@ -1,0 +1,66 @@
+global:
+  # imageRegistry: docker.io
+
+  ## Optionally specify an array of imagePullSecrets.
+  ## Secrets must be manually created in the namespace.
+  ## ref: https://kubernetes.io/docs/tasks/configure-pod-container/pull-image-private-registry/
+  ##
+
+  # imagePullSecrets:
+  #   - mySecretToRegistry
+
+nameOverride: 
+
+fullnameOverride: 
+
+annotations:
+
+serviceAccount:
+  create: true
+  name:
+  annotations:
+  automountServiceAccountToken: true
+
+
+# replicas of the terraform-operator controller
+replicas: 1
+
+# labels to be attached to the pods
+podLabels:
+
+priorityClassName: 
+
+securityContext:
+
+## toleration to add on the deployment
+##
+tolerations: 
+
+## nodeSelector to add on the deployment
+##
+nodeSelector: 
+
+image:
+  ## if not provided, the global.imageRegistry will be used
+  ## if global.imageRegistry is not used, it will default to docker.io
+  registry: docker.io
+  repository: kubechamp/terraform-operator
+  tag: "0.0.1"
+  pullPolicy: IfNotPresent
+
+
+livenessProbe:
+
+readinessProbe:
+
+resources:
+
+terraformRunner:
+  image:
+    ## if not provided, the global.imageRegistry will be used
+    ## if global.imageRegistry is not used, it will default to docker.io
+    registry: docker.io
+    repository: kubechamp/terraform-runner
+    tag: "0.0.1"
+
+

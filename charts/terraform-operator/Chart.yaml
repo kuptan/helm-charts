@@ -1,0 +1,14 @@
+apiVersion: v1
+name: terraform-operator
+version: 0.0.1
+appVersion: 0.0.1
+description: a kubernetes controller to manage terraform workflows
+engine: gotpl
+keywords:
+  - terraform-operator
+  - terraform-kubernetes
+  - terraform-run
+  - terraform-workflows
+  - terraform
+sources:
+  - https://github.com/kube-champ/terraform-operator
