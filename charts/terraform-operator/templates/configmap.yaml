@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ template "terraform-operator.fullname" . }}-known-hosts
+  namespace: {{ .Release.Namespace }}
+  labels:
+    {{- include "terraform-operator.labels" . | nindent 4 }}
+  annotations:
+    {{- toYaml .Values.annotations | nindent 4 }}
+
+{{- toYaml .Values.configs.sshKnownHosts | nindent 0 }}

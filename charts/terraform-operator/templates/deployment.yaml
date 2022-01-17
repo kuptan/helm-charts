@@ -1,13 +1,10 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "terraform-operator.fullname" . }}
+  name: {{ template "terraform-operator.fullname" . }}-controller
   namespace: {{ .Release.Namespace }}
   labels:
-    app: {{ template "terraform-operator.name" . }}
-    chart: {{ template "terraform-operator.chart" . }}
-    release: {{ .Release.Name }}
-    heritage: {{ .Release.Service }}
+    {{- include "terraform-operator.labels" . | nindent 4 }}
   annotations:
     {{- toYaml .Values.annotations | nindent 4 }}
 spec:
@@ -77,3 +74,5 @@ spec:
               value: {{ .Values.terraformRunner.image.repository }}
             - name: TERRAFORM_RUNNER_IMAGE_TAG
               value: {{ .Values.terraformRunner.image.tag }}
+            - name: KNOWN_HOSTS_CONFIGMAP_NAME
+              value: {{ template "terraform-operator.fullname" . }}-known-hosts
