@@ -58,7 +58,7 @@ image:
   ## if global.imageRegistry is not used, it will default to docker.io
   registry: docker.io
   repository: kubechamp/terraform-operator
-  tag: "0.0.2"
+  tag: "0.0.3"
   pullPolicy: IfNotPresent
 
 
@@ -74,6 +74,6 @@ terraformRunner:
     ## if global.imageRegistry is not used, it will default to docker.io
     registry: docker.io
     repository: kubechamp/terraform-runner
-    tag: "0.0.2"
+    tag: "0.0.3"
 
 

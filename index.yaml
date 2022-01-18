@@ -2,8 +2,25 @@ apiVersion: v1
 entries:
   terraform-operator:
   - apiVersion: v1
+    appVersion: 0.0.3
+    created: "2022-01-18T12:17:55.342571+01:00"
+    description: a kubernetes controller to manage terraform workflows
+    digest: 58c2db3bf6da8a084c299573d966892ca1faeb87d088b1d97102fb0aefb04b94
+    keywords:
+    - terraform-operator
+    - terraform-kubernetes
+    - terraform-run
+    - terraform-workflows
+    - terraform
+    name: terraform-operator
+    sources:
+    - https://github.com/kube-champ/terraform-operator
+    urls:
+    - https://kube-champ.github.io/helm-charts/packaged/terraform-operator-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v1
     appVersion: 0.0.2
-    created: "2022-01-17T11:49:46.421448+01:00"
+    created: "2022-01-18T12:17:55.332744+01:00"
     description: a kubernetes controller to manage terraform workflows
     digest: ae1083de18d1f362f38746a2dcbdd27a8d35b75c8b91282014c3d14a4dabe020
     keywords:
@@ -20,7 +37,7 @@ entries:
     version: 0.0.2
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2022-01-17T11:49:46.419129+01:00"
+    created: "2022-01-18T12:17:55.320121+01:00"
     description: a kubernetes controller to manage terraform workflows
     digest: ac509a5b5d3166066b51a238cd5398405e24ece718af80caf38df63f2a304020
     keywords:
@@ -35,4 +52,4 @@ entries:
     urls:
     - https://kube-champ.github.io/helm-charts/packaged/terraform-operator-0.0.1.tgz
     version: 0.0.1
-generated: "2022-01-17T11:49:46.416761+01:00"
+generated: "2022-01-18T12:17:55.315246+01:00"
