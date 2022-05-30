@@ -58,7 +58,7 @@ image:
   ## if global.imageRegistry is not used, it will default to docker.io
   registry: docker.io
   repository: kubechamp/terraform-operator
-  tag: "0.0.5"
+  tag: "0.1.0"
   pullPolicy: IfNotPresent
 
 
