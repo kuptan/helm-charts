@@ -63,7 +63,7 @@ spec:
             readOnlyRootFilesystem: true
           
           ports:
-            - name: http-metrics
+            - name:  metrics
               containerPort: 8080
               protocol: TCP
 
