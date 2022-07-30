@@ -2,8 +2,27 @@ apiVersion: v1
 entries:
   terraform-operator:
   - apiVersion: v2
+    appVersion: 0.1.3
+    created: "2022-07-30T13:35:24.80404+02:00"
+    description: a kubernetes controller to manage terraform workflows
+    digest: 89671201f11998bae4a39a82a2a56111d0a1c5828c571bcd7f151f369857ce41
+    keywords:
+    - terraform-operator
+    - terraform-kubernetes
+    - terraform-run
+    - terraform-workflows
+    - terraform-controller
+    - terraform
+    - kubernetes
+    name: terraform-operator
+    sources:
+    - https://github.com/kube-champ/terraform-operator
+    urls:
+    - https://kuptan.github.io/helm-charts/packaged/terraform-operator-0.0.9.tgz
+    version: 0.0.9
+  - apiVersion: v2
     appVersion: 0.1.1
-    created: "2022-06-09T15:23:30.957646+02:00"
+    created: "2022-07-30T13:35:24.802654+02:00"
     description: a kubernetes controller to manage terraform workflows
     digest: b4feea8524b5614b1d40221282899f38aa9fa4d614955ea94ad701e4f0f4aad7
     keywords:
@@ -22,7 +41,7 @@ entries:
     version: 0.0.8
   - apiVersion: v2
     appVersion: 0.1.0
-    created: "2022-06-09T15:23:30.956083+02:00"
+    created: "2022-07-30T13:35:24.800239+02:00"
     description: a kubernetes controller to manage terraform workflows
     digest: 581970682e46dac07f142475b430c447e5efb55af153996449de4fa0a2f3e5c0
     keywords:
@@ -41,7 +60,7 @@ entries:
     version: 0.0.7
   - apiVersion: v2
     appVersion: 0.0.5
-    created: "2022-06-09T15:23:30.954871+02:00"
+    created: "2022-07-30T13:35:24.79816+02:00"
     description: a kubernetes controller to manage terraform workflows
     digest: c3998c5bfa2d04b520f60d4d128cf338d4dd36d0ab7fbde7b4f11437701ffd2d
     keywords:
@@ -60,7 +79,7 @@ entries:
     version: 0.0.6
   - apiVersion: v2
     appVersion: 0.0.5
-    created: "2022-06-09T15:23:30.953407+02:00"
+    created: "2022-07-30T13:35:24.796229+02:00"
     description: a kubernetes controller to manage terraform workflows
     digest: 686852d428352825fc059952d3766868d329de38db143ebd4edd79dc3a2bce76
     keywords:
@@ -79,7 +98,7 @@ entries:
     version: 0.0.5
   - apiVersion: v1
     appVersion: 0.0.4
-    created: "2022-06-09T15:23:30.95205+02:00"
+    created: "2022-07-30T13:35:24.794422+02:00"
     description: a kubernetes controller to manage terraform workflows
     digest: 60b0305d873cdbf04247af6fac16543ddabff89694bb98b98b11e6a696361d76
     keywords:
@@ -96,7 +115,7 @@ entries:
     version: 0.0.4
   - apiVersion: v1
     appVersion: 0.0.3
-    created: "2022-06-09T15:23:30.950164+02:00"
+    created: "2022-07-30T13:35:24.792646+02:00"
     description: a kubernetes controller to manage terraform workflows
     digest: 58c2db3bf6da8a084c299573d966892ca1faeb87d088b1d97102fb0aefb04b94
     keywords:
@@ -113,7 +132,7 @@ entries:
     version: 0.0.3
   - apiVersion: v1
     appVersion: 0.0.2
-    created: "2022-06-09T15:23:30.948876+02:00"
+    created: "2022-07-30T13:35:24.790697+02:00"
     description: a kubernetes controller to manage terraform workflows
     digest: ae1083de18d1f362f38746a2dcbdd27a8d35b75c8b91282014c3d14a4dabe020
     keywords:
@@ -130,7 +149,7 @@ entries:
     version: 0.0.2
   - apiVersion: v1
     appVersion: 0.0.1
-    created: "2022-06-09T15:23:30.947527+02:00"
+    created: "2022-07-30T13:35:24.788683+02:00"
     description: a kubernetes controller to manage terraform workflows
     digest: ac509a5b5d3166066b51a238cd5398405e24ece718af80caf38df63f2a304020
     keywords:
@@ -145,4 +164,4 @@ entries:
     urls:
     - https://kuptan.github.io/helm-charts/packaged/terraform-operator-0.0.1.tgz
     version: 0.0.1
-generated: "2022-06-09T15:23:30.946593+02:00"
+generated: "2022-07-30T13:35:24.786803+02:00"

@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ template "terraform-operator.fullname" . }}-controller
+  name: {{ template "terraform-operator.fullname" . }}
   namespace: {{ .Release.Namespace }}
   labels:
     {{- include "terraform-operator.labels" . | nindent 4 }}
@@ -35,9 +35,16 @@ spec:
       {{- toYaml .Values.nodeSelector | nindent 8 }}
       {{- end }}
 
-      {{- if .Values.securityContext }}
+      {{- if .Values.podSecurityContext }}
       securityContext:
-        {{- toYaml .Values.securityContext | nindent 8 }}
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      {{- end }}
+
+      {{- if .Values.terminationGracePeriodSeconds }}
+      terminationGracePeriodSeconds: {{ .Values.terminationGracePeriodSeconds }}
+      {{- end }}
+      {{- if .Values.topologySpreadConstraints }}
+      topologySpreadConstraints: {{- include "common.tplvalues.render" (dict "value" .Values.topologySpreadConstraints "context" $) | nindent 8 }}
       {{- end }}
 
       imagePullSecrets: {{ include "terraform-operator.imagePullSecrets" . | nindent 8 }}
@@ -61,11 +68,15 @@ spec:
 
           securityContext:
             readOnlyRootFilesystem: true
-          
+
           ports:
             - name:  metrics
-              containerPort: 8080
-              protocol: TCP
+              containerPort: {{ .Values.metrics.service.ports.http }}
+
+          args:
+            - --metrics-bind-address=:{{ .Values.metrics.service.ports.http }}
+            - --requeue-dependency={{ .Values.requeues.dependency }}
+            - --requeue-job-watch={{ .Values.requeues.jobWatch }}
 
           env:
             - name: DOCKER_REGISTRY

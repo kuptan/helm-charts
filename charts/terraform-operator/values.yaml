@@ -38,12 +38,28 @@ configs:
 # replicas of the terraform-operator controller
 replicas: 1
 
+# requeues are the times when the reconcile needs to requeue
+requeues:
+  # the requeue time on which the controller checks again when the terraform workflow is being executed  
+  jobWatch: 10s
+  # the requeue time on which the controller checks again on dependencies status  
+  dependency: 15s
+
 # labels to be attached to the pods
 podLabels:
 
 priorityClassName: 
 
-securityContext:
+## @param terminationGracePeriodSeconds Termination grace period in seconds
+##
+terminationGracePeriodSeconds: ""
+
+## @param topologySpreadConstraints Topology Spread Constraints for pod assignment spread across your cluster among failure-domains. Evaluated as a template
+## Ref: https://kubernetes.io/docs/concepts/workloads/pods/pod-topology-spread-constraints/#spread-constraints-for-pods
+##
+topologySpreadConstraints: []
+
+podSecurityContext:
 
 ## toleration to add on the deployment
 ##
@@ -58,7 +74,7 @@ image:
   ## if global.imageRegistry is not used, it will default to docker.io
   registry: docker.io
   repository: kubechamp/terraform-operator
-  tag: "0.1.1"
+  tag: "0.1.3"
   pullPolicy: IfNotPresent
 
 livenessProbe:
