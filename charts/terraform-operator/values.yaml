@@ -167,6 +167,6 @@ terraformRunner:
     ## if global.imageRegistry is not used, it will default to docker.io
     registry: docker.io
     repository: kubechamp/terraform-runner
-    tag: "0.0.4"
+    tag: "0.0.5"
 
 
